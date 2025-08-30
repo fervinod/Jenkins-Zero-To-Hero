@@ -68,6 +68,7 @@ pipeline {
                     git config --global  user.name "vinod Fernandes"
                     // Also need to add the *git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate* to prevent the dubious ownership issue
                     *git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate*
+                    *git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate-cicd@tmp
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
