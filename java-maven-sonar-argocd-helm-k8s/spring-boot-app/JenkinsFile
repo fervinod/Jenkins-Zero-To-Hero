@@ -62,11 +62,11 @@ pipeline {
             GIT_USER_NAME = "fervinod"
         }
         steps {
+          // Also need to add the *git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate* to prevent the dubious ownership issue
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config --global user.email "vinod.xyz@gmail.com"
                     git config --global  user.name "vinod Fernandes"
-                    // Also need to add the *git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate* to prevent the dubious ownership issue
                     *git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate*
                     *git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate-cicd@tmp
                     BUILD_NUMBER=${BUILD_NUMBER}
