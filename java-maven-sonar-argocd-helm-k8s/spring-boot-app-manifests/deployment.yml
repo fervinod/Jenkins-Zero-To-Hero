@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: fdsdevops8/ultimate-jenkins:49
+        image: fdsdevops8/ultimate-jenkins:replaceImageTag
         ports:
         - containerPort: 8080
